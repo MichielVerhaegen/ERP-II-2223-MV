@@ -7,7 +7,6 @@
     </edmx:Reference>
     <edmx:DataServices>
         <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
-
-        </Schema>
+            </Schema>
     </edmx:DataServices>
 </edmx:Edmx>
