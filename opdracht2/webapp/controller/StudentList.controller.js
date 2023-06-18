@@ -22,6 +22,18 @@ sap.ui.define([
 
             },
             _onroutematched: function (oEvent) {
+            },
+            handlepresslistitem: function(oEvent){
+                var oSource = oEvent.getSource();
+                console.log(oSource)
+                let ID = oSource.getBindingContext().getProperty("Id")
+                var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+                console.log('na router aanmaken' )
+                console.log(ID)
+                oRouter.navTo("detailedview",{id:ID});
+                console.log('na nav' )
+
+
             }
         });
 

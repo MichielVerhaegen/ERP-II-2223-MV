@@ -11,19 +11,20 @@
 
             <Label text="Forename" id="forename"/>
 
-            <Input width="100%" id="input1"/>
+            <Input width="100%" id="input1" value="{form>/FORENAME}"/>
 
             <Label text="Lastname" width="100%" id="label2"/>
 
-            <Input width="100%" id="lastname"/>
+            <Input width="100%" id="lastname" value="{form>/LASTNAME}"/>
 
             <Label text="Class" id="label1"/>
 
-            <Input width="100%" id="class" cd:w5g.dt.context="/studentsSet"/></sap.ui.layout.form:content>
+            <Input width="100%" id="class" value="{form>/CLASS}"/>
+            </sap.ui.layout.form:content>
 
     </sap.ui.layout.form:SimpleForm>
 
-    <Button xmlns="sap.m" text="Submit" id="submit" type="Accept"/>
+    <Button xmlns="sap.m" text="Submit" id="submit" type="Accept" press="HandleSave"/>
 
     </content>
     <headerContent>

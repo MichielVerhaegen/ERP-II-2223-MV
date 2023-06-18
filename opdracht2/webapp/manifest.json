@@ -94,10 +94,10 @@
       },
       "routes": [
         {
-          "name": "RouteStudentList",
+          "name": "StudentList",
           "pattern": ":?query:",
           "target": [
-            "TargetStudentList"
+            "StudentList"
           ]
         },
         {
@@ -106,9 +106,16 @@
           "target": "addStudent"
           
         }
+        ,
+        {
+          "name": "detailedview",
+          "pattern": "detailedview/{id}",
+          "target": "detailedview"
+          
+        }
       ],
       "targets": {
-        "TargetStudentList": {
+        "StudentList": {
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
@@ -121,6 +128,13 @@
           "clearControlAggregation": false,
           "viewId": "addStudent",
           "viewName": "addStudent"
+        },
+        "detailedview": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "detailedview",
+          "viewName": "detailedview"
         }
       }
     },

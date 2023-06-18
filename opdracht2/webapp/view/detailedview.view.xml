@@ -1,0 +1,12 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns="sap.m" controllerName="opdracht2.opdracht2.controller.detailedview" displayBlock="true">
+<Page xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" id="detailedview" title="{i18n>title}">
+    <content>
+
+
+
+    </content>
+    <headerContent>
+
+    </headerContent>
+    </Page>
+</mvc:View>
