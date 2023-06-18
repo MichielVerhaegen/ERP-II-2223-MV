@@ -4,7 +4,6 @@
     <content>
     <List noDataText="No items in list" id="list2" items="{path:'/studentsSet',parameters:{select:'Id,Forename,Lastname,Class'},sorter:[{path:'Forename',descending:false}]}">
         <StandardListItem type="Detail" title="{Forename} {Lastname}" id="item5" icon="sap-icon://person-placeholder" description="{Class}"/>
-        
             <items>
             </items>
         </List>
