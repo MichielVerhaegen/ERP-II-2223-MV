@@ -1,0 +1,16 @@
+<mvc:View xmlns:networkgraph="sap.suite.ui.commons.networkgraph" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" controllerName="opdracht2.opdracht2.controller.StudentList" displayBlock="true"   xmlns:l="sap.ui.layout"
+  xmlns:f="sap.ui.layout.form">
+<Page xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" id="page" title="{i18n>title}">
+    <content>
+    <List noDataText="No items in list" id="list2" items="{path:'/studentsSet',parameters:{select:'Id,Forename,Lastname,Class'},sorter:[{path:'Forename',descending:false}]}">
+        <StandardListItem type="Detail" title="{Forename} {Lastname}" id="item5" icon="sap-icon://person-placeholder" description="{Class}"/>
+        
+            <items>
+            </items>
+        </List>
+    </content>
+    <headerContent>
+        <Button xmlns="sap.m" text="Add Student" id="button0" icon="sap-icon://add" type="Accept" press="HandleAddStudent"/>
+    </headerContent>
+    </Page>
+</mvc:View>
