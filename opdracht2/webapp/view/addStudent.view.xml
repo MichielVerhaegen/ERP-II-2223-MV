@@ -11,15 +11,15 @@
 
             <Label text="Forename" id="forename"/>
 
-            <Input width="100%" id="input1" value="{form>/FORENAME}"/>
+            <Input width="100%" id="input1" value="{form>/Forename}"/>
 
             <Label text="Lastname" width="100%" id="label2"/>
 
-            <Input width="100%" id="lastname" value="{form>/LASTNAME}"/>
+            <Input width="100%" id="lastname" value="{form>/Lastname}"/>
 
             <Label text="Class" id="label1"/>
 
-            <Input width="100%" id="class" value="{form>/CLASS}"/>
+            <Input width="100%" id="class" value="{form>/Class}"/>
             </sap.ui.layout.form:content>
 
     </sap.ui.layout.form:SimpleForm>
