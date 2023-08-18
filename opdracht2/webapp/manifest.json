@@ -112,7 +112,15 @@
           "pattern": "detailedview/{id}",
           "target": "detailedview"
           
+        },
+        {
+          "name": "addgameview",
+          "pattern": "addgameview/{id}",
+          "target": "addgameview"
+          
         }
+  
+        
       ],
       "targets": {
         "StudentList": {
@@ -135,6 +143,13 @@
           "clearControlAggregation": false,
           "viewId": "detailedview",
           "viewName": "detailedview"
+        },
+        "addgameview": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "addgameview",
+          "viewName": "addgameview"
         }
       }
     },

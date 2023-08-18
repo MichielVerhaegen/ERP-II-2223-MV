@@ -7,7 +7,7 @@ sap.ui.define([
     function (Controller) {
         "use strict";
         let ID;
-        return Controller.extend("opdracht2.opdracht2.controller.detailedview", {
+        return Controller.extend("opdracht2.opdracht2.controller.addgameview", {
             onInit: function () {
                 console.log('in init');
                 this.oOwnerComponent = this.getOwnerComponent();
@@ -59,8 +59,7 @@ sap.ui.define([
                 });
                 return oDeferred.promise();
               },
-              addgamepress: function(oEvent){
-                var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+              addgamepress: function(){
                 oRouter.navTo("addgameview",{id:ID});
               }
         });
