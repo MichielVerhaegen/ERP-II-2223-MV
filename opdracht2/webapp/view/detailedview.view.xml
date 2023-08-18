@@ -23,7 +23,7 @@
                 <HeaderContainer id="_IDGenHeaderContainer1" >
                 <Button id="_IDGenButton1" type='Accept' press='addgamepress' text="Add favorite"></Button>
                 </HeaderContainer>
-                    <Table id="idgamestable" inset="false" items="{/gamesSet}">
+                    <Table id="idgamestable" inset="false" items="{/favogameSet}">
                         <columns>
                             <Column id="_IDGenColumn1"/>
                         </columns>

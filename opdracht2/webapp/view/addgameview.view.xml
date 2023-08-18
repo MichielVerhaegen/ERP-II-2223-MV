@@ -4,26 +4,7 @@
     xmlns:f="sap.ui.layout.form"
     xmlns="sap.m" controllerName="opdracht2.opdracht2.controller.addgameview" displayBlock="true">
     <Page xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" id="addgameview" title="{i18n>title}">
-        <IconTabBar id='icontabbar' class="sapUiSmallMarginBottom sapUiResponsiveContentPadding">
-            <items>
-                <IconTabFilter id='generalinfofilter' key="Generalinfo" text="General info">
-                    <f:SimpleForm id='form' minWidth="1024" maxContainerCols="2" layout="ResponsiveGridLayout">
-                        <f:title>
-                            <core:Title text="General Info" id='title1' />
-                        </f:title>
-                        <Label id="Lastname" text="Lastname"/>
-                        <Text id="LastnameText" text="{Lastname}"/>
-                        <Label id="Forename" text="Forename"/>
-                        <Text id="ForenameText" text="{Forename}"/>
-                        <Label id="Class" text="Class"/>
-                        <Text id="Classtext" text="{Class}"/>
-                    </f:SimpleForm>
-                </IconTabFilter>
-                <IconTabFilter id='gamesfilter' key="Games" text="Games">
-                <HeaderContainer id="_IDGenHeaderContainer1" >
-                <Button id="_IDGenButton1" type='Accept' press='addgamepress' text="Add favorite"></Button>
-                </HeaderContainer>
-                    <Table id="idgamestable" inset="false" items="{/gamesSet}">
+        <Table id="idgamestable" inset="false" items="{/gamesSet}">
                         <columns>
                             <Column id="_IDGenColumn1"/>
                         </columns>
@@ -36,17 +17,17 @@
                                         
                                         <Label id="_IDGenLabel2" text='Publisher: ' ></Label>
                                         <Text id="_IDGenText2" text="{Publisher}"/>
+                                        <Label id="_IDGenLabel4" text='platform: ' ></Label>
+                                        <Text id="_IDGenText3" text="{Platform}"/>
                                         
                                         <Label id="_IDGenLabel3" text='Release date: ' ></Label>
                                         <DatePicker id="_IDGenDateTimePicker1" value= "{ReleaseDate}" enabled="false"/>
-                                        
+
+                                        <Button id="_IDGenButton1" text="Add to favorites" type="Accept" press="addgame"></Button>
                                     </VBox>
                                 </cells>
                             </ColumnListItem>
                         </items>
                     </Table>
-                </IconTabFilter>
-            </items>
-        </IconTabBar>
     </Page>
 </mvc:View>

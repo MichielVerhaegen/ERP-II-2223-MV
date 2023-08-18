@@ -1,10 +1,12 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
+    "sap/ui/core/mvc/Controller",
+    "sap/m/MessageBox",
+    "sap/ui/model/json/JSONModel"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller) {
+    function (Controller, MessageBox, JSONModel) {
         "use strict";
         let ID;
         return Controller.extend("opdracht2.opdracht2.controller.addgameview", {
@@ -19,32 +21,11 @@ sap.ui.define([
               },
               
               _onRouteMatched: function (oEvent) {
-                console.log('in route matched');
                 var oArgs;
                 console.log('arg');
                 oArgs = oEvent.getParameter("arguments");
-                console.log('view');
-                var oView = this.getView();
-                console.log('getmodel');
-                var oDataModel = oView.getModel();
                 ID = oArgs.id;
-                console.log('urlpath');
-                var urlPath = "/studentsSet(Id=guid'" + ID + "')";
-                console.log(urlPath);
-                console.log('bind')
-               oView.bindElement({
-                path: urlPath
-               });
-               this.byId("idgamestable").bindElement("/favogameSet");
-                console.log('nabind')
-
-                this.readElement(urlPath, oDataModel).done(
-                    function (oData) {
-                        console.log('odata');
-                        console.log(oData);
-                        oDataModel.refresh(true);
-                    }.bind(this)
-                );
+               
             },
             readElement: function (path, odatamodel, filter) {
                 var oDeferred = jQuery.Deferred();
@@ -59,8 +40,26 @@ sap.ui.define([
                 });
                 return oDeferred.promise();
               },
-              addgamepress: function(){
-                oRouter.navTo("addgameview",{id:ID});
+              addgame: function(oEvent){
+                var oView = this.getView();
+                var oDataModel = oView.getModel();
+                var oSource = oEvent.getSource();
+                let gameID = oSource.getBindingContext().getProperty("Id")
+        
+                var oFavogame = {
+                  Studentid: ID,
+                  Gameid: gameID,
+                };
+                console.log(oFavogame);
+                oDataModel.create("/favogameSet", oFavogame, {
+                  success: function (data, response) {
+                    MessageBox.success("Game is added to the favorites");
+                  },
+                  error: function (error) {
+                    MessageBox.error("failed to add");
+                  },
+                });        
+                
               }
         });
 
